@@ -3,34 +3,20 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
   return (
-    <div className="nav">
-      <input type="checkbox" id="nav-check" />
-      <div className="nav-header">
-        <div className="nav-title">My Website</div>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-logo">
+          <h1>MyApp</h1>
+        </div>
+        <ul className="navbar-menu">
+          <li className="navbar-item" id="booking"><a href="#Booking">Booking</a></li>
+          <li className="navbar-item" id="parking"><a href="#parking">Parking</a></li>
+          <li className="navbar-item" id="charging"><a href="#charging">Charging</a></li>
+          <li className="navbar-item" id="walletPoints"><a href="#walletPoints">Wallet Points</a></li>
+          <li className="navbar-item" id="loginSignup"><a href="#loginSignup">Login/Signup</a></li>
+        </ul>
       </div>
-      <div className="nav-btn">
-        <label htmlFor="nav-check" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-      <div className="nav-links">
-        {/* Replace <a> with <button> for better accessibility */}
-        <button className="nav-link" onClick={() => window.location.href = '/'}>
-          Home
-        </button>
-        <button className="nav-link" onClick={() => window.location.href = '/about'}>
-          About
-        </button>
-        <button className="nav-link" onClick={() => window.location.href = '/services'}>
-          Services
-        </button>
-        <button className="nav-link" onClick={() => window.location.href = '/contact'}>
-          Contact
-        </button>
-      </div>
-    </div>
+    </nav>
   );
 };
 

@@ -1,15 +1,16 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+// import ParkingSpace from './components/ParkingSpace';
 import Wallet from './components/Wallet';
+import ParkingSpace from './components/ParkingSpace';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <main>
-        <h1>Welcome to My Website</h1>
-      </main>
+      
+      <ParkingSpace/>
       <Wallet/>
       <Footer />
     </div>
