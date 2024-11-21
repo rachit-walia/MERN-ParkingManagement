@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const connectDb = require("../server/config/dbConnection");  // Keep this line and remove the other
+const connectDb = require("./config/dbConnection");  // Keep this line and remove the other
 // const connectDb = require("./config/dbConnection");  // Remove this duplicate import
 dotenv.config(); // Load environment variables
 
@@ -16,6 +16,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("API is running...");
 });
+app.use('/api/register',require("./routes/userRoute"));
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
