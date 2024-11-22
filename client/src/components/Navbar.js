@@ -12,7 +12,7 @@ const Navbar = () => {
             alt="Animated Car Logo" 
             id="logo-image" 
           />
-          <h1>MyApp</h1>
+          <h1>W-Parking</h1>
         </div>
         <ul id="navbar-menu">
           <li id="navbar-item">
