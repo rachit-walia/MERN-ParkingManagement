@@ -1,27 +1,91 @@
 #footer {
   background-color: #333;
   color: #ffffff;
-  padding: 20px;
+  padding: 40px 0;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 #footer-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#footer-about, #footer-contact {
+#footer-about, #footer-contact, #footer-social {
   flex: 1;
+  min-width: 280px;
   margin: 10px;
 }
 
-#footer-about h2, #footer-contact h2 {
-  margin: 0 0 10px;
+#about-heading, #contact-heading, #social-heading {
+  margin: 0 0 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f0f0f0; /* Lighter shade for headings */
+}
+
+#about-description, #contact-email, #contact-phone {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dcdcdc; /* Subtle light gray for descriptions */
+}
+
+#footer-social {
+  text-align: left;
+}
+
+#social-links {
+  margin: 0;
+  font-size: 14px;
+}
+
+#social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+#social-links a:hover {
+  text-decoration: underline;
 }
 
 #footer-bottom {
-  margin-top: 20px;
+  margin-top: 30px;
   border-top: 1px solid #444;
   padding-top: 10px;
+  font-size: 12px;
+}
+
+#footer-rights {
+  margin: 0;
+}
+
+
+#contact-email a, #contact-phone a {
+  color: #87cefa; /* Soft blue for links */
+}
+
+#contact-email a:hover, #contact-phone a:hover {
+  text-decoration: underline;
+  color: #ffffff; /* White color on hover for better visibility */
+}
+
+@media (max-width: 768px) {
+  #footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #footer-about, #footer-contact, #footer-social {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #social-links {
+    font-size: 16px;
+  }
 }

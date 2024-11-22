@@ -1,0 +1,128 @@
+/* General Page Styling */
+#charging-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#charging-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#charging-header h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+#charging-header p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+/* Content Layout */
+#charging-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Calendar Section */
+#calendar-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+#calendar-container h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#calendar-container p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #16a085;
+}
+
+/* Charging Options Section */
+#charging-options {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+}
+
+#charging-options label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+#charging-options input, #charging-options select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+#submit-btn {
+    background-color: #16a085;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Why Charge With Us Section */
+#charging-why, #charging-time {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+#charging-why:hover, #charging-time:hover {
+    transform: translateY(-5px);
+}
+
+#charging-why h3, #charging-time h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.5em;
+}
+
+#charging-why ul, #charging-time ul {
+    list-style: disc inside;
+    padding: 0;
+    color: #34495e;
+}
+
+#charging-why ul li, #charging-time ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#charging-why img, #charging-time img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

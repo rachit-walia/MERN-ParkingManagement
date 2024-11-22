@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Parking Page Styling */
+#parking-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#parking-heading {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#parking-description {
+    text-align: center;
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+#vehicle-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#vehicle-options button {
+    background-color: #16a085;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#vehicle-options button:hover {
+    background-color: #1abc9c;
+}
+
+#availability-info {
+    text-align: center;
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#availability-heading {
+    color: #2c3e50;
+}
+
+#availability-info p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+#availability-info button {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#availability-info button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#availability-info button:hover:enabled {
+    background-color: #d35400;
+}
+
+#parking-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #27ae60;
+    margin: 15px 0;
+}
+
+#parking-tips {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+#tips-list {
+    list-style: disc inside;
+    padding: 0;
+}
+
+#tips-list li {
+    margin: 10px 0;
+    color: #34495e;
+}
+
+#parking-images {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#gallery-heading {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#image-gallery img {
+    width: 200px;  /* Adjusted size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
