@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import Wallet from './components/Wallet';
+// import Wallet from './components/Wallet';
 import Charging from './components/Charging';
 import WalletNav from './components/walletNav';
 import Booking from './components/Booking';
@@ -24,7 +24,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<BodyPage />} />
-        <Route path="/wallet" element={<Wallet />} />
+        {/* <Route path="/wallet" element={<Wallet />} /> */}
         <Route path="/wallet-nav" element={<WalletNav />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/charging" element={<Charging />} />
