@@ -7,3 +7,16 @@ ParkingSpace-- 2wheelers,3wheelers,4wheelers
 Wallet--Added function to add 300,500 and 1000 ruppees
 Footer--Created about us .
 
+Date -- 21
+
+modified signup --21 Nov
+
+Date--22Nov
+added wallet,booking and minor changes in server side for login, added router for body.js
+
+Date--23Nov,2024
+added jwt,modified footer and added react-router
+
+Date--24 Nov,2024
+JWT--token, connected login/Signup to backend 
+
