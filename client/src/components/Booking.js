@@ -1,12 +1,44 @@
-import React, { useState } from 'react';
-import Calendar from 'react-calendar'; // Install react-calendar
-import '../styles/Booking.css'// Ensure the CSS file is correctly linked
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "../styles/Booking.css";
 
 const Booking = () => {
   const [date, setDate] = useState(new Date());
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const bookingData = { ...formData, date };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setSuccessMessage(data.message);
+        setFormData({ name: "", email: "", phone: "" });
+      } else {
+        const error = await response.json();
+        setSuccessMessage(`Error: ${error.message}`);
+      }
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+      setSuccessMessage("Error submitting booking. Please try again.");
+    }
   };
 
   return (
@@ -19,46 +51,48 @@ const Booking = () => {
       <div id="booking-content">
         <section id="calendar-container">
           <h3>Select a Date</h3>
-          <Calendar
-            onChange={handleDateChange}
-            value={date}
-            minDate={new Date()} // Prevent booking for past dates
-          />
+          <Calendar onChange={handleDateChange} value={date} minDate={new Date()} />
           <p>Selected Date: {date.toDateString()}</p>
-        </section>
-
-        <section id="booking-benefits">
-          <h3>Why Book in Advance?</h3>
-          <ul>
-            <li>Guaranteed Parking Spot: No more searching for parking at the last minute!</li>
-            <li>Exclusive Discounts: Get up to 20% off for early bookings.</li>
-            <li>Priority Access: Skip the queue and get quick access to the parking lot.</li>
-            <li>24/7 Availability: Book your space anytime, with full flexibility.</li>
-          </ul>
-        </section>
-
-        <section id="booking-images">
-          <h3>Experience Our Parking Spaces</h3>
-          <div id="image-gallery">
-            <img src="https://jooinn.com/images/parking-lot-7.jpg" alt="Parking Lot" />
-          </div>
         </section>
 
         <section id="booking-form">
           <h3>Ready to Book?</h3>
-          <p>Fill out the form below to confirm your booking:</p>
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
 
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
 
             <label htmlFor="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required />
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+              required
+            />
 
-            <button type="submit" id="book-now-btn">Book Now</button>
+            <button type="submit" id="book-now-btn">
+              Book Now
+            </button>
           </form>
+          {successMessage && <p className="success-message">{successMessage}</p>}
         </section>
       </div>
     </div>

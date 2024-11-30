@@ -194,6 +194,12 @@
 #book-now-btn:hover {
   background-color: #16a085;
 }
+.success-message {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: green;
+}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
