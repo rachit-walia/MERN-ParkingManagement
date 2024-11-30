@@ -1,49 +1,16 @@
-// const express = require("express");
-// const dotenv = require("dotenv");
-// const connectDb = require("./config/dbConnection");
-// dotenv.config();
-
-// const app = express();
-
-// const cors = require('cors');
-// app.use(cors());
-
-// // Connect to MongoDB
-// connectDb();
-
-// // Middleware
-// app.use(express.json());
-
-// // Routes
-// app.get("/", (req, res) => {
-//     res.send("API is running...");
-// });
-
-// // Register user routes
-// app.use('/api/users', require("./routes/userRoute")); 
-
-// // Register booking routes
-// app.use("/api/bookings", require("./routes/bookingRoute")); // Handles all booking-related routes
-
-// app.use((req, res) => {
-//     res.status(404).json({ message: "Endpoint not found" });
-//   })
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDb = require("./config/dbConnection");
+const cors = require("cors");  // Declare cors only once
+const parkingRoute = require("./routes/parkingRoute");  // Assuming you have parking routes set up
+const checkValidVehicle = require("./middlewares/vechileCheck");  // Assuming you have vehicle check middleware
 
 dotenv.config();
 const app = express();
 
-const cors = require("cors");
-app.use(cors()); // Enable CORS for frontend communication
-
 // Middleware
-app.use(express.json()); // Parse JSON request bodies
+app.use(cors());  // Enable CORS for frontend communication
+app.use(express.json());  // Parse JSON request bodies
 
 // Connect to MongoDB
 connectDb();
@@ -55,6 +22,7 @@ app.get("/", (req, res) => {
 
 // Register routes
 app.use("/api/bookings", require("./routes/bookingRoute")); // Booking routes
+app.use("/api/parking", parkingRoute);  // Register parking routes
 
 // Fallback for undefined routes
 app.use((req, res) => {
