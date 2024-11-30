@@ -20,9 +20,14 @@ app.get("/", (req, res) => {
 });
 
 // Register user routes
-app.use('/api/users', require("./routes/userRoute")); // Handles all user-related routes (e.g., register, login)
+app.use('/api/users', require("./routes/userRoute")); 
 
-// NOTE: You don't need a separate `/api/login` route as login is already part of `userRoute`.
+// Register booking routes
+app.use("/api/bookings", require("./routes/bookingRoute")); // Handles all booking-related routes
+
+app.use((req, res) => {
+    res.status(404).json({ message: "Endpoint not found" });
+  })
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
